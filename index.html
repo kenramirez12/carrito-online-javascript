@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body class="bg-light py-4">
-		<section id="thankyou-page">
+		<section id="thankyou-page" class="d-none">
 			<div class="container py-5 text-center">
 				<h1 class="fs-1 fw-bold mb-3">🛒</h1>
 				<h1 class="fs-3 fw-bold mb-3">¡Gracias por tu compra!</h1>
@@ -24,7 +24,7 @@
 				</a>
 			</div>
 		</section>
-		<section id="checkout">
+		<section id="checkout" class="d-none">
       <div class="container pb-3">
         <div class="w-100 pt-2 pb-4 px-3 bg-white rounded border">
           <div class="d-flex align-items-center justify-content-between">
@@ -65,7 +65,7 @@
                   class="mb-3 text-center d-flex align-items-center justify-content-between"
                 >
                   <span class="fw-bold">Total:</span>
-                  <span class="fw-bold fs-5"> S/30.00 </span>
+                  <span id="total-checkout" class="fw-bold fs-5">S/0.00</span>
                 </div>
                 <hr />
                 <h5 class="fw-semibold mb-3">Métodos de pago</h5>
@@ -106,50 +106,13 @@
           <div class="card-header fw-bold">
             🛒 Carrito de compras
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-6">
-                  <img
-                    class="img-thumbnail img-cart-item"
-                    src="imagenes/producto.png"
-                    alt=""
-                  />
-                  <span>Nombre del producto #1</span>
-                </div>
-                <div class="col-6 text-end">
-                  <span class="fw-bold">S/10.00</span>
-                  <span class="fst-italic">(3 und)</span>
-                  <button class="btn btn-outline-danger btn-sm ms-2">
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-6">
-                  <img
-                    class="img-thumbnail img-cart-item"
-                    src="imagenes/producto.png"
-                    alt=""
-                  />
-                  <span>Nombre del producto #1</span>
-                </div>
-                <div class="col-6 text-end">
-                  <span class="fw-bold">S/10.00</span>
-                  <span class="fst-italic">(3 und)</span>
-                  <button class="btn btn-outline-danger btn-sm ms-2">
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </li>
+          <p id="lista-carrito-vacia" class="pt-3 px-3">Aún no has agregado productos al carrito.</p>
+          <ul id="lista-items-carrito" class="list-group list-group-flush d-none">
           </ul>
         </div>
         <div class="row mt-3">
           <div class="col-12 text-end">
-            <span class="fw-bold fs-5"> Total S/30.00 </span>
+            <span id="total-carrito" class="fw-bold fs-5">Total S/0.00 </span>
             <button class="btn btn-lg btn-primary ms-2">Comprar</button>
           </div>
         </div>
