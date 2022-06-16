@@ -3,19 +3,19 @@ const PRODUCTOS = [
 		id: 1,
 		nombre: "Producto #1",
 		precio: "10.00",
-		imagen: "/imagenes/producto.png",
+		imagen: "./imagenes/producto.png",
 	},
 	{
 		id: 2,
 		nombre: "Producto #2",
 		precio: "4.50",
-		imagen: "/imagenes/producto.png",
+		imagen: "./imagenes/producto.png",
 	},
 	{
 		id: 3,
 		nombre: "Producto #3",
 		precio: "4.50",
-		imagen: "/imagenes/producto.png",
+		imagen: "./imagenes/producto.png",
 	},
 	{
 		id: 4,
