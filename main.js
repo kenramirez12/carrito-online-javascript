@@ -237,22 +237,28 @@ const mostrarPagina = (pagina) => {
 	}
 };
 
-const validarFormularioCheckout = () => {
-	const nombres = document.getElementById("nombres");
-	const direccion = document.getElementById("direccion");
-	const correo = document.getElementById("correo");
-	const telefono = document.getElementById("telefono");
+const obtenerDatosFormularioCheckout = () => {
+	const nombres = document.getElementById("nombres").value;
+	const direccion = document.getElementById("direccion").value;
+	const correo = document.getElementById("correo").value;
+	const telefono = document.getElementById("telefono").value;
 
-	if (
-		nombres.value !== "" &&
-		direccion.value !== "" &&
-		correo.value !== "" &&
-		telefono.value !== ""
-	) {
-		return true;
-	} else {
-		return false;
-	}
+	return {
+		nombres,
+		direccion,
+		correo,
+		telefono,
+	};
+};
+
+const validarFormularioCheckout = () => {
+	const dataFormulario = obtenerDatosFormularioCheckout();
+	return (
+		dataFormulario.nombres !== "" &&
+		dataFormulario.direccion !== "" &&
+		dataFormulario.correo !== "" &&
+		dataFormulario.telefono !== ""
+	);
 };
 
 const init = () => {
@@ -287,15 +293,8 @@ const init = () => {
 		realizarPedidoBoton.addEventListener("click", (e) => {
 			e.preventDefault();
 			if (validarFormularioCheckout()) {
-				const nombres = document.getElementById("nombres");
-				const direccion = document.getElementById("direccion");
-				const correo = document.getElementById("correo");
-				const telefono = document.getElementById("telefono");
-
-				console.log("nombres", nombres.value);
-				console.log("direccion", direccion.value);
-				console.log("correo", correo.value);
-				console.log("telefono", telefono.value);
+				const dataFormulario = obtenerDatosFormularioCheckout();
+				console.log("dataFormulario", dataFormulario);
 				mostrarPagina("thankyou-page");
 			} else {
 				alert("Debes completar tu información para continuar.");
